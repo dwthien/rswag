@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'">
   <title>Swagger UI</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
@@ -67,7 +68,7 @@
 
 <div id="swagger-ui"></div>
 
-<!-- Workaround for https://github.com/swagger-api/swagger-editor/issues/1371 -->
+<!-- Workaround for https://github.com/swagger-api/swagger-editor/issues/1371 123 -->
 <script>
   if (window.navigator.userAgent.indexOf("Edge") > -1) {
     console.log("Removing native Edge fetch in favor of swagger-ui's polyfill")
