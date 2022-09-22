@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="script-src * 'sha256-j4Lx1FqFgvYDBEjW7NQaEY7/HhCi8WVsLWkqC4+wJ3w=' 'sha256-m6fvPft2s/yQEwOGt2QsG3g0QeObZkTNIm8RPvU3xbA=' 'unsafe-inline';">
+  <meta http-equiv="Content-Security-Policy" content="script-src * 'abc' 'nonce-rAnd0m' 'sha256-j4Lx1FqFgvYDBEjW7NQaEY7/HhCi8WVsLWkqC4+wJ3w=' 'sha256-m6fvPft2s/yQEwOGt2QsG3g0QeObZkTNIm8RPvU3xbA=' 'unsafe-inline';">
   <title>Swagger UI</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
@@ -69,7 +69,7 @@
 <div id="swagger-ui"></div>
 
 <!-- Workaround for https://github.com/swagger-api/swagger-editor/issues/1371 123 -->
-<script>
+<script nonce="abc">
   if (window.navigator.userAgent.indexOf("Edge") > -1) {
     console.log("Removing native Edge fetch in favor of swagger-ui's polyfill")
     window.fetch = undefined;
@@ -78,7 +78,7 @@
 
 <script src="./swagger-ui-bundle.js"> </script>
 <script src="./swagger-ui-standalone-preset.js"> </script>
-<script>
+<script nonce="rAnd0m">
   window.onload = function () {
     var configObject = JSON.parse('<%= config_object.to_json %>');
     var oauthConfigObject = JSON.parse('<%= oauth_config_object.to_json %>');
